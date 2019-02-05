@@ -34,7 +34,7 @@ public class NewBean implements Serializable {
         return phone;
     }
 
-    public void setBook(PhoneEntity phone) {
+    public void setPhone(PhoneEntity phone) {
         this.phone = phone;
     }
 

@@ -34,7 +34,7 @@ public class ManageBean implements Serializable {
                     "select r from Reservation r " +
                             "where r.phone = :phone and r.status <> 'CLOSED' " +
                             "order by r.created", ReservationEntity.class)
-                    .setParameter("phone", r.getBook())
+                    .setParameter("phone", r.getPhone())
                     .getResultStream()
                     .findFirst();
             if (firstReservation.isEmpty() || firstReservation.get().getId().equals(reservationId)) {

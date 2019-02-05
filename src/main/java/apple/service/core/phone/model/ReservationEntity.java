@@ -16,7 +16,7 @@ public class ReservationEntity implements Serializable {
     @GeneratedValue
     private Long id;
     @ManyToOne
-    private PhoneEntity book;
+    private PhoneEntity phone;
     @ManyToOne
     private UserEntity user;
     @Column
@@ -38,12 +38,12 @@ public class ReservationEntity implements Serializable {
         this.id = id;
     }
 
-    public PhoneEntity getBook() {
-        return book;
+    public PhoneEntity getPhone() {
+        return phone;
     }
 
-    public void setBook(PhoneEntity book) {
-        this.book = book;
+    public void setPhone(PhoneEntity phone) {
+        this.phone = phone;
     }
 
     public UserEntity getUser() {
@@ -69,4 +69,6 @@ public class ReservationEntity implements Serializable {
     public void setCreated(LocalDateTime created) {
         this.created = created;
     }
+
+    
 }

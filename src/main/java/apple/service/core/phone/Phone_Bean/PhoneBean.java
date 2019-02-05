@@ -21,11 +21,11 @@ public class PhoneBean implements Serializable {
     @Inject
     private CurrentUser currentUser;
     private Long id;
-    private PhoneEntity book;
+    private PhoneEntity phone;
 
     public void openBook() {
         System.out.println("Opening phone " + id);
-        book = em.find(PhoneEntity.class, id);
+        phone = em.find(PhoneEntity.class, id);
     }
 
     @Transactional
@@ -33,18 +33,18 @@ public class PhoneBean implements Serializable {
         System.out.println("Trying to reserve phone " + id
                 + " for user " + currentUser.getUser().getId());
 
-        PhoneEntity book = em.find(PhoneEntity.class, id);
+        PhoneEntity phone = em.find(PhoneEntity.class, id);
 
         ReservationEntity reservation = new ReservationEntity();
-        reservation.setBook(book);
+        reservation.setPhone(phone);
         reservation.setUser(currentUser.getUser());
         reservation.setStatus(StatusResarvation.ACTIVE);
 
         em.persist(reservation);
     }
 
-    public PhoneEntity getBook() {
-        return book;
+    public PhoneEntity getPhone() {
+        return phone;
     }
 
     public Long getId() {

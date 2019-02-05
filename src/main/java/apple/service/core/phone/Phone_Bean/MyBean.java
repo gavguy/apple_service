@@ -42,7 +42,7 @@ public class MyBean implements Serializable {
                     "select r from Reservation r " +
                             "where r.book = :book and r.status <> 'CLOSED' " +
                             "order by r.created", ReservationEntity.class)
-                    .setParameter("phone", r.getBook())
+                    .setParameter(" ", r.getPhone())
                     .getResultStream()
                     .findFirst();
             if (firstReservation.isEmpty() || firstReservation.get().getId().equals(reservationId)) {

@@ -1,0 +1,77 @@
+<!--
+  ~ Copyright (c) 2018 Dimitrijs Fedotovs
+  ~ This code is licensed under MIT license
+  ~ (see LICENSE.txt for details)
+  -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/templates/main.xhtml">
+    <ui:define name="content">
+
+        <f:metadata>
+            <f:viewAction action="#{manageBean.prepare}"/>
+        </f:metadata>
+
+        <h:form>
+            <h2>Ready reservations</h2>
+            <h:dataTable value="#{manageBean.availableBooks}"
+                         var="res"
+                         styleClass="w3-table w3-table-all">
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                    #{res.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Book Title</f:facet>
+                    #{res.book.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">User Name</f:facet>
+                    #{res.user.loginName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Action</f:facet>
+                    <h:commandButton action="#{manageBean.giveBook(res)}"
+                                     value="Give out"
+                                     styleClass="w3-button w3-orange">
+                        <f:ajax render="@form" execute="@form"/>
+                    </h:commandButton>
+                </h:column>
+            </h:dataTable>
+
+            <h2>Taken Books</h2>
+            <h:dataTable value="#{manageBean.takenBooks}"
+                         var="res"
+                         styleClass="w3-table w3-table-all">
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                    #{res.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Book Title</f:facet>
+                    #{res.book.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">User Name</f:facet>
+                    #{res.user.loginName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Action</f:facet>
+                    <h:commandButton action="#{manageBean.takeBook(res)}"
+                                     value="Take back"
+                                     styleClass="w3-button w3-orange">
+                        <f:ajax render="@form" execute="@form"/>
+                    </h:commandButton>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+
+    </ui:define>
+</ui:composition>
+
+</html>

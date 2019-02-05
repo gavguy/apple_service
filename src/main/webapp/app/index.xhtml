@@ -1,0 +1,48 @@
+<!--
+  ~ Copyright (c) 2018 Dimitrijs Fedotovs
+  ~ This code is licensed under MIT license
+  ~ (see LICENSE.txt for details)
+  -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/templates/main.xhtml">
+    <ui:define name="content">
+
+        <h:form>
+
+            <h:inputText value="#{listBean.term}"/>
+            <h:commandButton value="Search" action="#{listBean.doSearch}">
+                <f:ajax execute="@form" render="@form"/>
+            </h:commandButton>
+
+            <h:outputLabel value="Not found"
+                           rendered="#{empty listBean.books}"/>
+            <h:dataTable value="#{listBean.books}" var="book"
+                         rendered="#{not empty listBean.books}"
+                         styleClass="w3-table w3-table-all">
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                    #{book.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Title</f:facet>
+                    #{book.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">link</f:facet>
+                    <h:outputLink value="book.xhtml">open
+                        <f:param name="id" value="#{book.id}"/>
+                    </h:outputLink>
+                </h:column>
+            </h:dataTable>
+
+        </h:form>
+    </ui:define>
+</ui:composition>
+
+</html>

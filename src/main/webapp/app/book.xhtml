@@ -1,0 +1,53 @@
+<!--
+  ~ Copyright (c) 2018 Dimitrijs Fedotovs
+  ~ This code is licensed under MIT license
+  ~ (see LICENSE.txt for details)
+  -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/templates/main.xhtml">
+    <ui:define name="content">
+
+        <f:metadata>
+            <f:viewParam name="id" value="#{phoneBean.id}"/>
+            <f:viewAction action="#{phoneBean.openBook}"/>
+        </f:metadata>
+
+        <h1>#{phoneBean.book.title}</h1>
+
+        <table>
+            <tr>
+                <td>id</td>
+                <td>#{phoneBean.book.id}</td>
+            </tr>
+            <tr>
+                <td>isbn</td>
+                <td>#{phoneBean.book.isbn}</td>
+            </tr>
+            <tr>
+                <td>author</td>
+                <td>#{phoneBean.book.author}</td>
+            </tr>
+            <tr>
+                <td>year</td>
+                <td>#{phoneBean.book.year}</td>
+            </tr>
+            <tr>
+                <td>description</td>
+                <td>#{phoneBean.book.description}</td>
+            </tr>
+        </table>
+
+        <h:form>
+            <h:commandButton value="Reserve for me"
+                             action="#{phoneBean.reserve(phoneBean.id)}"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
+
+</html>

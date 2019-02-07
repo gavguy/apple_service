@@ -15,7 +15,7 @@
 
         <h:form>
             <h2>Ready reservations</h2>
-            <h:dataTable value="#{manageBean.availableBooks}"
+            <h:dataTable value="#{manageBean.availablePhones}"
                          var="res"
                          styleClass="w3-table w3-table-all">
                 <h:column>
@@ -36,7 +36,7 @@
                 </h:column>
                 <h:column>
                     <f:facet name="header">Action</f:facet>
-                    <h:commandButton action="#{manageBean.giveBook(res)}"
+                    <h:commandButton action="#{manageBean.Phone(res)}"
                                      value="Give out"
                                      styleClass="w3-button w3-orange">
                         <f:ajax render="@form" execute="@form"/>
@@ -45,7 +45,7 @@
             </h:dataTable>
 
             <h2>Taken Books</h2>
-            <h:dataTable value="#{manageBean.takenBooks}"
+            <h:dataTable value="#{manageBean.takenPhones}"
                          var="res"
                          styleClass="w3-table w3-table-all">
                 <h:column>
@@ -67,7 +67,7 @@
                 </h:column>
                 <h:column>
                     <f:facet name="header">Action</f:facet>
-                    <h:commandButton action="#{manageBean.takeBook(res)}"
+                    <h:commandButton action="#{manageBean.takePhone(res)}"
                                      value="Take back"
                                      styleClass="w3-button w3-orange">
                         <f:ajax render="@form" execute="@form"/>

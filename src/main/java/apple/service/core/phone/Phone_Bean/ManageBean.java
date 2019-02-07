@@ -51,25 +51,25 @@ public class ManageBean implements Serializable {
     }
 
     @Transactional
-    public void giveBook(ReservationEntity reservation) {
+    public void Phone(ReservationEntity reservation) {
         ReservationEntity r = em.merge(reservation);
         r.setStatus(StatusReservation.TAKEN);
         prepare();
     }
 
     @Transactional
-    public void takeBook(ReservationEntity reservation) {
+    public void takePhone(ReservationEntity reservation) {
         ReservationEntity r = em.merge(reservation);
         r.setStatus(StatusReservation.CLOSED);
         prepare();
     }
 
 
-    public List<ReservationEntity> getAvailableBooks() {
+    public List<ReservationEntity> getAvailablePhones() {
         return availableResult;
     }
 
-    public List<ReservationEntity> getTakenBooks() {
+    public List<ReservationEntity> getTakenPhones() {
         return takenResult;
     }
 

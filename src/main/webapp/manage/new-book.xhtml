@@ -12,19 +12,19 @@
                 <h2>Book created successfully</h2>
             </ui:fragment>
             <p>
-                <h:outputLabel value="Title:"/>
-                <h:inputText id="title" value="#{newBean.phone.title}"/>
-                <h:messages for="title"/>
+                <h:outputLabel value="Owner:"/>
+                <h:inputText id="owner" value="#{newBean.phone.owner}"/>
+                <h:messages for="owner"/>
             </p>
             <p>
-                <h:outputLabel value="Author:"/>
-                <h:inputText id="author" value="#{newBean.phone.author}"/>
-                <h:messages for="author"/>
+                <h:outputLabel value="VERSION:"/>
+                <h:inputText id="version" value="#{newBean.phone.version}"/>
+                <h:messages for="version"/>
             </p>
             <p>
-                <h:outputLabel value="ISBN:"/>
-                <h:inputText id="isbn" value="#{newBean.phone.tipe}"/>
-                <h:messages for="isbn"/>
+                <h:outputLabel value="PRODUCT:"/>
+                <h:inputText id="product" value="#{newBean.phone.tipe}"/>
+                <h:messages for="product"/>
             </p>
             <p>
                 <h:outputLabel value="Year:"/>
@@ -32,11 +32,11 @@
                 <h:messages for="year"/>
             </p>
             <p>
-                <h:outputLabel value="Description:"/>
+                <h:outputLabel value="Information:"/>
                 <br/>
-                <h:inputTextarea id="description"
-                                 value="#{newBean.phone.description}"/>
-                <h:messages for="description"/>
+                <h:inputTextarea id="information"
+                                 value="#{newBean.phone.information}"/>
+                <h:messages for="information"/>
             </p>
             <p>
                 <h:commandButton action="#{newBean.createPhone}"

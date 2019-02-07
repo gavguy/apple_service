@@ -13,7 +13,7 @@
             <f:viewAction action="#{phoneBean.openPhone}"/>
         </f:metadata>
 
-        <h1>#{phoneBean.phone.title}</h1>
+        <h1>#{phoneBean.phone.owner}</h1>
 
         <table>
             <tr>
@@ -25,8 +25,8 @@
                 <td>#{phoneBean.phone.tipe}</td>
             </tr>
             <tr>
-                <td>author</td>
-                <td>#{phoneBean.phone.author}</td>
+                <td>version model</td>
+                <td>#{phoneBean.phone.version}</td>
             </tr>
             <tr>
                 <td>year</td>
@@ -34,8 +34,18 @@
             </tr>
             <tr>
                 <td>description</td>
-                <td>#{phoneBean.phone.description}</td>
+                <td>#{phoneBean.phone.information}</td>
             </tr>
+
+
+            dobavka trocek
+
+
+
+
+
+
+
         </table>
 
         <h:form>

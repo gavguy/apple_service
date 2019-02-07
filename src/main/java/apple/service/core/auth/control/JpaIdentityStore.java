@@ -36,6 +36,8 @@ public class JpaIdentityStore implements IdentityStore {
                         .INVALID_RESULT);
     }
 
+
+    //
     private Set<String> makeRoles(Role role) {
         Set<String> result = new HashSet<>(4, 1);
         switch (role) {
@@ -48,6 +50,10 @@ public class JpaIdentityStore implements IdentityStore {
         }
         return result;
     }
+
+    //
+
+
 
     private boolean checkPassword(String hashedPassword,
                                   Password password) {

@@ -1,8 +1,3 @@
-<!--
-  ~ Copyright (c) 2018 Dimitrijs Fedotovs
-  ~ This code is licensed under MIT license
-  ~ (see LICENSE.txt for details)
-  -->
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -12,7 +7,7 @@
 <ui:composition template="/templates/main.xhtml">
     <ui:define name="content">
 
-        <h:form id="new-book-form">
+        <h:form id="new-phone-form">
             <ui:fragment rendered="#{newBean.created}">
                 <h2>Book created successfully</h2>
             </ui:fragment>
@@ -44,7 +39,7 @@
                 <h:messages for="description"/>
             </p>
             <p>
-                <h:commandButton action="#{newBean.createBook}"
+                <h:commandButton action="#{newBean.createPhone}"
                                  value="Create">
                     <f:ajax render="@form" execute="@form"/>
                 </h:commandButton>

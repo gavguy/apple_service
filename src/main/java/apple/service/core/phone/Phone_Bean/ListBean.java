@@ -16,7 +16,7 @@ public class ListBean implements Serializable {
     private EntityManager em;
     private String term;
 
-    public List<PhoneEntity> getBooks() {
+    public List<PhoneEntity> getPhones() {
         if (term == null) {
             return em.createQuery("select p from Phone p", PhoneEntity.class)
                     .getResultList();

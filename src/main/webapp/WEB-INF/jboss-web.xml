@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Copyright (c) 2018 Dimitrijs Fedotovs
-  ~ This code is licensed under MIT license
-  ~ (see LICENSE.txt for details)
-  -->
 
 <jboss-web>
 
-    <context-root>/bookshelf</context-root>
+    <context-root>/iphone-shelf</context-root>
     <security-domain>jaspitest</security-domain>
 
 </jboss-web>

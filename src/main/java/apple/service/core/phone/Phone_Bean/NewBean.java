@@ -18,11 +18,13 @@ public class NewBean implements Serializable {
     private boolean created = false;
 
     @Transactional
-    public String createBook() {
+    public String createPhone() {
         em.persist(phone);
         phone = new PhoneEntity();
         created = true;
+
 //        return "phone-created.xhtml";
+
         return null;
     }
 

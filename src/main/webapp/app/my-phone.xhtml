@@ -16,7 +16,7 @@
         </f:metadata>
 
         <h2>Available books</h2>
-        <h:dataTable value="#{myBean.availableBooks}"
+        <h:dataTable value="#{myBean.availablePhones}"
                      var="res"
                      styleClass="w3-table w3-table-all">
             <h:column>
@@ -38,7 +38,7 @@
         </h:dataTable>
 
         <h2>Wait list</h2>
-        <h:dataTable value="#{myBean.inQueueBooks}"
+        <h:dataTable value="#{myBean.inQueuePhones}"
                      var="res"
                      styleClass="w3-table w3-table-all">
             <h:column>
@@ -60,7 +60,7 @@
         </h:dataTable>
 
         <h2>Taken list</h2>
-        <h:dataTable value="#{myBean.takenBooks}"
+        <h:dataTable value="#{myBean.takenPhones}"
                      var="res"
                      styleClass="w3-table w3-table-all">
             <h:column>
@@ -82,7 +82,7 @@
         </h:dataTable>
 
         <h2>Books history</h2>
-        <h:dataTable value="#{myBean.historyBooks}"
+        <h:dataTable value="#{myBean.historyPhones}"
                      var="book"
                      styleClass="w3-table w3-table-all">
             <h:column>

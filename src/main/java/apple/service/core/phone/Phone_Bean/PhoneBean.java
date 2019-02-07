@@ -3,7 +3,7 @@ package apple.service.core.phone.Phone_Bean;
 import apple.service.core.auth.boundary.CurrentUser;
 import apple.service.core.phone.model.PhoneEntity;
 import apple.service.core.phone.model.ReservationEntity;
-import apple.service.core.phone.model.StatusResarvation;
+import apple.service.core.phone.model.StatusReservation;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -23,10 +23,14 @@ public class PhoneBean implements Serializable {
     private Long id;
     private PhoneEntity phone;
 
-    public void openBook() {
+
+
+    public void openPhone() {
         System.out.println("Opening phone " + id);
         phone = em.find(PhoneEntity.class, id);
     }
+
+
 
     @Transactional
     public void reserve(Long id) {
@@ -38,7 +42,7 @@ public class PhoneBean implements Serializable {
         ReservationEntity reservation = new ReservationEntity();
         reservation.setPhone(phone);
         reservation.setUser(currentUser.getUser());
-        reservation.setStatus(StatusResarvation.ACTIVE);
+        reservation.setStatus(StatusReservation.ACTIVE);
 
         em.persist(reservation);
     }

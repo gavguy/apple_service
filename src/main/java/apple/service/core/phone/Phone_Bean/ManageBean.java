@@ -1,7 +1,7 @@
 package apple.service.core.phone.Phone_Bean;
 
 import apple.service.core.phone.model.ReservationEntity;
-import apple.service.core.phone.model.StatusResarvation;
+import apple.service.core.phone.model.StatusReservation;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -18,22 +18,25 @@ import java.util.Optional;
 public class ManageBean implements Serializable {
     @PersistenceContext
     private EntityManager em;
-    private List<ReservationEntity> availableResult;
     private List<ReservationEntity> takenResult;
+
+    private List<ReservationEntity> availableResult;
+
 
     public void prepare() {
         availableResult = new ArrayList<>();
         List<ReservationEntity> userReservations = em.createQuery(
-                "select r from Reservation r " +
+                "select r from Reservation"
+                        + " r " +
                         "where r.status = 'ACTIVE'", ReservationEntity.class)
                 .getResultList();
 
         for (ReservationEntity r : userReservations) {
             Long reservationId = r.getId();
             Optional<ReservationEntity> firstReservation = em.createQuery(
-                    "select r from Reservation r " +
-                            "where r.phone = :phone and r.status <> 'CLOSED' " +
-                            "order by r.created", ReservationEntity.class)
+                    "select r from Reservation r "
+                            +   "where r.phone = :phone and r.status <> 'CLOSED' "
+                            +  "order by r.created", ReservationEntity.class)
                     .setParameter("phone", r.getPhone())
                     .getResultStream()
                     .findFirst();
@@ -50,14 +53,14 @@ public class ManageBean implements Serializable {
     @Transactional
     public void giveBook(ReservationEntity reservation) {
         ReservationEntity r = em.merge(reservation);
-        r.setStatus(StatusResarvation.TAKEN);
+        r.setStatus(StatusReservation.TAKEN);
         prepare();
     }
 
     @Transactional
     public void takeBook(ReservationEntity reservation) {
         ReservationEntity r = em.merge(reservation);
-        r.setStatus(StatusResarvation.CLOSED);
+        r.setStatus(StatusReservation.CLOSED);
         prepare();
     }
 

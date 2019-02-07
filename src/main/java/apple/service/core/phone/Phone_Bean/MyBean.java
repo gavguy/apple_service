@@ -40,9 +40,9 @@ public class MyBean implements Serializable {
             Long reservationId = r.getId();
             Optional<ReservationEntity> firstReservation = em.createQuery(
                     "select r from Reservation r " +
-                            "where r.book = :book and r.status <> 'CLOSED' " +
+                            "where r.phone = :book and r.status <> 'CLOSED' " +
                             "order by r.created", ReservationEntity.class)
-                    .setParameter(" ", r.getPhone())
+                    .setParameter("phone", r.getPhone())
                     .getResultStream()
                     .findFirst();
             if (firstReservation.isEmpty() || firstReservation.get().getId().equals(reservationId)) {
@@ -57,25 +57,25 @@ public class MyBean implements Serializable {
                 .setParameter("user", currentUser.getUser())
                 .getResultList();
 
-        historyResult = em.createQuery("select distinct r.book from Reservation r " +
+        historyResult = em.createQuery("select distinct r.phone from Reservation r " +
                 "where r.user = :user and r.status = 'CLOSED'", PhoneEntity.class)
                 .setParameter("user", currentUser.getUser())
                 .getResultList();
     }
 
-    public List<ReservationEntity> getAvailableBooks() {
+    public List<ReservationEntity> getAvailablePhones() {
         return availableResult;
     }
 
-    public List<ReservationEntity> getInQueueBooks() {
+    public List<ReservationEntity> getInQueuePhones() {
         return inQueueResult;
     }
 
-    public List<ReservationEntity> getTakenBooks() {
+    public List<ReservationEntity> getTakenPhones() {
         return takenResult;
     }
 
-    public List<PhoneEntity> getHistoryBooks() {
+    public List<PhoneEntity> getHistoryPhones() {
         return historyResult;
     }
 }

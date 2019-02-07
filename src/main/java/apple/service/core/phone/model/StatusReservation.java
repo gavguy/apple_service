@@ -1,6 +1,6 @@
 package apple.service.core.phone.model;
 
-public enum StatusResarvation {
+public enum StatusReservation {
     ACTIVE,
     TAKEN,
     CLOSED

@@ -21,7 +21,7 @@ public class ReservationEntity implements Serializable {
     private UserEntity user;
     @Column
     @Enumerated(EnumType.STRING)
-    private StatusResarvation status;
+    private StatusReservation status;
     @Column
     private LocalDateTime created;
 ///somu
@@ -54,11 +54,11 @@ public class ReservationEntity implements Serializable {
         this.user = user;
     }
 
-    public StatusResarvation getStatus() {
+    public StatusReservation getStatus() {
         return status;
     }
 
-    public void setStatus(StatusResarvation status) {
+    public void setStatus(StatusReservation status) {
         this.status = status;
     }
 

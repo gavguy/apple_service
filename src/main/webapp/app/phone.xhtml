@@ -1,8 +1,3 @@
-<!--
-  ~ Copyright (c) 2018 Dimitrijs Fedotovs
-  ~ This code is licensed under MIT license
-  ~ (see LICENSE.txt for details)
-  -->
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -18,28 +13,28 @@
             <f:viewAction action="#{phoneBean.openPhone}"/>
         </f:metadata>
 
-        <h1>#{phoneBean.book.title}</h1>
+        <h1>#{phoneBean.phone.title}</h1>
 
         <table>
             <tr>
                 <td>id</td>
-                <td>#{phoneBean.book.id}</td>
+                <td>#{phoneBean.phone.id}</td>
             </tr>
             <tr>
-                <td>isbn</td>
-                <td>#{phoneBean.book.isbn}</td>
+                <td>tipe</td>
+                <td>#{phoneBean.phone.tipe}</td>
             </tr>
             <tr>
                 <td>author</td>
-                <td>#{phoneBean.book.author}</td>
+                <td>#{phoneBean.phone.author}</td>
             </tr>
             <tr>
                 <td>year</td>
-                <td>#{phoneBean.book.year}</td>
+                <td>#{phoneBean.phone.year}</td>
             </tr>
             <tr>
                 <td>description</td>
-                <td>#{phoneBean.book.description}</td>
+                <td>#{phoneBean.phone.description}</td>
             </tr>
         </table>
 

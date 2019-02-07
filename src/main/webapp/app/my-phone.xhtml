@@ -83,15 +83,15 @@
 
         <h2>Books history</h2>
         <h:dataTable value="#{myBean.historyPhones}"
-                     var="book"
+                     var="phone"
                      styleClass="w3-table w3-table-all">
             <h:column>
                 <f:facet name="header">Id</f:facet>
-                #{book.id}
+                #{phone.id}
             </h:column>
             <h:column>
                 <f:facet name="header">Title</f:facet>
-                #{book.title}
+                #{phone.title}
             </h:column>
         </h:dataTable>
 

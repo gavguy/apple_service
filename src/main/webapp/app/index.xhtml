@@ -22,21 +22,21 @@
 
             <h:outputLabel value="Not found"
                            rendered="#{empty listBean.phones}"/>
-            <h:dataTable value="#{listBean.phones}" var="book"
+            <h:dataTable value="#{listBean.phones}" var="phone"
                          rendered="#{not empty listBean.phones}"
                          styleClass="w3-table w3-table-all">
                 <h:column>
                     <f:facet name="header">Id</f:facet>
-                    #{book.id}
+                    #{phone.id}
                 </h:column>
                 <h:column>
                     <f:facet name="header">Title</f:facet>
-                    #{book.title}
+                    #{phone.title}
                 </h:column>
                 <h:column>
                     <f:facet name="header">link</f:facet>
                     <h:outputLink value="book.xhtml">open
-                        <f:param name="id" value="#{book.id}"/>
+                        <f:param name="id" value="#{phone.id}"/>
                     </h:outputLink>
                 </h:column>
             </h:dataTable>

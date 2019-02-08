@@ -35,11 +35,11 @@ public class RegistrationBean implements Serializable {
     private String loginName;
     @NotBlank(message = "Я не увидела Пароля. (Please) Попытайся ещё разок!")
     @Size(min = 6, message = "Паролик очень кароткий! Сделай минимум - 6 - символов!")
-    @Size(max = 200, message = "Не издевайся над собой! c{_]. Максимум - 200 - символов")
+    @Size(max = 20, message = "Не издевайся над собой! c{_]. Максимум - 20 - символов")
     private String password1;
     @NotBlank(message = "(Повтор) Я не прочитала Пароля. ")
     @Size(min = 6, message = "(Повтор)  Сделай минимум - 6 - символов!")
-    @Size(max = 200, message = "(Повтор) Не издевайся над собой! c{_]. Максимум - 200 - символов")
+    @Size(max = 20, message = "(Повтор) Не издевайся над собой! c{_]. Максимум - 20 - символов")
     private String password2;
 
     public String register() {

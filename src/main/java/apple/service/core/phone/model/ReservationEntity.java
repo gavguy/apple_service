@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity(name = "Reservation")
-
 @Table(name = "reservations")
 public class ReservationEntity implements Serializable {
     @Id
@@ -29,46 +28,35 @@ public class ReservationEntity implements Serializable {
     public void onCreate() {
         created = LocalDateTime.now();
     }
-
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
     public PhoneEntity getPhone() {
         return phone;
     }
-
     public void setPhone(PhoneEntity phone) {
         this.phone = phone;
     }
-
     public UserEntity getUser() {
         return user;
     }
-
     public void setUser(UserEntity user) {
         this.user = user;
     }
-
     public StatusReservation getStatus() {
         return status;
     }
-
     public void setStatus(StatusReservation status) {
         this.status = status;
     }
-
     public LocalDateTime getCreated() {
         return created;
     }
-
     public void setCreated(LocalDateTime created) {
         this.created = created;
     }
 
-    
 }

@@ -31,7 +31,7 @@ public class MyBean implements Serializable {
         availableResult = new ArrayList<>();
         inQueueResult = new ArrayList<>();
         List<ReservationEntity> userReservations = em.createQuery(
-                "select r from Reservation r " +
+                "select r from Reservation  r " +
                         "where r.user = :user and r.status = 'ACTIVE'", ReservationEntity.class)
                 .setParameter("user", currentUser.getUser())
                 .getResultList();
@@ -39,8 +39,8 @@ public class MyBean implements Serializable {
         for (ReservationEntity r : userReservations) {
             Long reservationId = r.getId();
             Optional<ReservationEntity> firstReservation = em.createQuery(
-                    "select r from Reservation r " +
-                            "where r.phone = :book and r.status <> 'CLOSED' " +
+                    "select r from Resevation r " +
+                            "where r.phone = :phone and r.status <> 'CLOSED' " +
                             "order by r.created", ReservationEntity.class)
                     .setParameter("phone", r.getPhone())
                     .getResultStream()
@@ -79,3 +79,5 @@ public class MyBean implements Serializable {
         return historyResult;
     }
 }
+
+

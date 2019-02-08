@@ -7,11 +7,11 @@
         <div class="w3-bar w3-black">
             <ui:fragment rendered="#{request.isUserInRole('USER')}">
                 <h:link value="User space" outcome="/app/index.xhtml" styleClass="w3-bar-item w3-button"/>
-                <h:link value="My Books" outcome="/app/my-books.xhtml" styleClass="w3-bar-item w3-button"/>
+                <h:link value="My Phones" outcome="/app/my-phone.xhtml" styleClass="w3-bar-item w3-button"/>
             </ui:fragment>
             <ui:fragment rendered="#{request.isUserInRole('MANAGER')}">
                 <h:link value="Manager space" outcome="/manage/index.xhtml" styleClass="w3-bar-item w3-button"/>
-                <h:link value="Create Book" outcome="/manage/new-book.xhtml" styleClass="w3-bar-item w3-button"/>
+                <h:link value="Create Phone" outcome="/manage/new-phone.xhtml" styleClass="w3-bar-item w3-button"/>
             </ui:fragment>
             <ui:fragment rendered="#{request.isUserInRole('ADMIN')}">
                 <h:link value="Admin space" outcome="/admin/index.xhtml" styleClass="w3-bar-item w3-button"/>

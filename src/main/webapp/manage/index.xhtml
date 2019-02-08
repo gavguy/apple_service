@@ -7,6 +7,11 @@
 <ui:composition template="/templates/main.xhtml">
     <ui:define name="content">
 
+        <head>
+            <style>
+                body {  background-color: lightblue;}
+            </style>
+        </head>
 
         <f:metadata>
             <f:viewAction action="#{manageBean.prepare}"/>
@@ -14,7 +19,7 @@
 
 
         <h:form>
-            <h2>Ready reservations</h2>
+            <h4>Ready reservaionshep</h4>
             <h:dataTable value="#{manageBean.availablePhones}"
                          var="res"
                          styleClass="w3-table w3-table-all">
@@ -23,12 +28,24 @@
                     #{res.id}
                 </h:column>
                 <h:column>
-                    <f:facet name="header">Book Title</f:facet>
+                    <f:facet name="header">Owner</f:facet>
                     #{res.phone.owner}
                 </h:column>
+                <h:column>
+                    <f:facet name="header">product</f:facet>
+                    #{res.phone.product}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">version</f:facet>
+                    #{res.phone.version}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">serialNR</f:facet>
+                    #{res.phone.serialNr}
+                </h:column>
 
-                mnogo cego dobavit
-                nemnogo udalit
+                <!--mnogo cego dobavit-->
+                <!--nemnogo udalit-->
 
                 <h:column>
                     <f:facet name="header">User Name</f:facet>
@@ -38,13 +55,13 @@
                     <f:facet name="header">Action</f:facet>
                     <h:commandButton action="#{manageBean.Phone(res)}"
                                      value="Give out"
-                                     styleClass="w3-button w3-orange">
+                                     styleClass="w3-button blue">
                         <f:ajax render="@form" execute="@form"/>
                     </h:commandButton>
                 </h:column>
             </h:dataTable>
 
-            <h2>Taken Books</h2>
+            <h2>Taken's</h2>
             <h:dataTable value="#{manageBean.takenPhones}"
                          var="res"
                          styleClass="w3-table w3-table-all">
@@ -52,15 +69,26 @@
                     <f:facet name="header">Id</f:facet>
                     #{res.id}
                 </h:column>
-
-                cut drugoe dobavitj
-
-                i cut drugoe udalit
-
                 <h:column>
-                    <f:facet name="header">Book Title</f:facet>
+                    <f:facet name="header">Owner</f:facet>
                     #{res.phone.owner}
                 </h:column>
+                <h:column>
+                    <f:facet name="header">product</f:facet>
+                    #{res.phone.product}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">version</f:facet>
+                    #{res.phone.version}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">serialNR</f:facet>
+                    #{res.phone.serialNr}
+                </h:column>
+
+                <!--mnogo cego dobavit-->
+                <!--nemnogo drugogo udalit-->
+
                 <h:column>
                     <f:facet name="header">User Name</f:facet>
                     #{res.user.loginName}
@@ -69,7 +97,7 @@
                     <f:facet name="header">Action</f:facet>
                     <h:commandButton action="#{manageBean.takePhone(res)}"
                                      value="Take back"
-                                     styleClass="w3-button w3-orange">
+                                     styleClass="w3-button w3-yellow">
                         <f:ajax render="@form" execute="@form"/>
                     </h:commandButton>
                 </h:column>

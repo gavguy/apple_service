@@ -5,4 +5,3 @@ insert into users (id, login_name, password_hash, role_name) values (-3, 'admin'
 insert into phones (id, owner, product, version, ios, color, cover, county, year) values (-1, 'andreys esakovs', 'смартфон', '5s', 'ios-12', 'white', 'classic/special Edition', 'chine', 1996)
 
 
-insert into reservations (id, user_id, book_id, status, created) values (-1, -1, -1, 'TAKEN', '2019-01-17')

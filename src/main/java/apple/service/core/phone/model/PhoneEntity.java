@@ -92,16 +92,6 @@ public class PhoneEntity implements Serializable {
 
 
 
-//
-//    public String getTipe() {
-//        return product;
-//    }
-//
-//    public void setTipe(String tipe) {
-//        this.product = tipe;
-//    }
-//
-//
 
 
 }

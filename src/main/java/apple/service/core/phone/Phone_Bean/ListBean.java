@@ -21,7 +21,7 @@ public class ListBean implements Serializable {
             return em.createQuery("select p from Phone p", PhoneEntity.class)
                     .getResultList();
         } else {
-            return em.createQuery("select p from Phone p where lower(b.title) like :term",
+            return em.createQuery("select p from Phone p where lower(p.owner) like :term",
                     PhoneEntity.class)
                     .setParameter("term", "%" + term.toLowerCase() + "%")
                     .getResultList();

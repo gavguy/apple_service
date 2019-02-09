@@ -10,7 +10,7 @@
         </f:metadata>
 
 
-        <h2>Available phones for обмен\ченить</h2>
+        <h3>Available phones for обмен\чiнить</h3>
         <h:dataTable value="#{myBean.availablePhones}"
                      var="res"
                      styleClass="w3-table w3-table-all">
@@ -38,7 +38,7 @@
             </h:column>
         </h:dataTable>
 
-        <h2>Wait list</h2>
+        <h4>Wait list</h4>
         <h:dataTable value="#{myBean.inQueuePhones}"
                      var="res"
                      styleClass="w3-table w3-table-all">
@@ -46,37 +46,19 @@
                 <f:facet name="header">Id</f:facet>
                 #{res.id}
             </h:column>
+
             <h:column>
                 <f:facet name="header">Status</f:facet>
                 #{res.status}
             </h:column>
+
             <h:column>
                 <f:facet name="header">Owner</f:facet>
                 #{res.phone.owner}
             </h:column>
             <h:column>
-                <f:facet name="header">User Name</f:facet>
-                #{res.user.loginName}
-            </h:column>
-        </h:dataTable>
-
-        <h2>Taken list</h2>
-        <h:dataTable value="#{myBean.takenPhones}"
-                     var="res"
-                     styleClass="w3-table w3-table-all">
-            <h:column>
-                <f:facet name="header">Id</f:facet>
-                #{res.id}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Status</f:facet>
-                #{res.status}
-            </h:column>
-
-
-            <h:column>
-                <f:facet name="header">Phone Title</f:facet>
-                #{res.phone.owner}
+                <f:facet name="header">Product</f:facet>
+                #{res.phone.product}
             </h:column>
             <h:column>
                 <f:facet name="header">User Name</f:facet>
@@ -84,21 +66,66 @@
             </h:column>
         </h:dataTable>
 
-        <h2>hone history</h2>
-        <h:dataTable value="#{myBean.historyPhones}"
-                     var="phone"
-                     styleClass="w3-table w3-table-all">
-            <h:column>
-                <f:facet name="header">Id</f:facet>
-                #{phone.id}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Title</f:facet>
-                #{phone.owner}
-            </h:column>
-        </h:dataTable>
 
-    </ui:define>
+    <h4>Taken list</h4>
+    <h:dataTable value="#{myBean.takenPhones}"
+                 var="res"
+                 styleClass="w3-table w3-table-all">
+
+        <h:column>
+            <f:facet name="header">Id</f:facet>
+            #{res.id}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Status</f:facet>
+            #{res.status}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Owner</f:facet>
+            #{res.phone.owner}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Product</f:facet>
+            #{res.phone.product}
+        </h:column>
+        <h:column>
+            <f:facet name="header">User Name</f:facet>
+            #{res.user.loginName}
+        </h:column>
+    </h:dataTable>
+
+    <h5>hone history</h5>
+    <h:dataTable value="#{myBean.historyPhones}"
+                 var="phone"
+                 styleClass="w3-table w3-table-all">
+
+        <h:column>
+            <f:facet name="header">Id</f:facet>
+            #{res.id}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Status</f:facet>
+            #{res.status}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Owner</f:facet>
+            #{res.phone.owner}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Product</f:facet>
+            #{res.phone.product}
+        </h:column>
+        <h:column>
+            <f:facet name="header">User Name</f:facet>
+            #{res.user.loginName}
+        </h:column>
+    </h:dataTable>
+
+</ui:define>
 </ui:composition>
 
-</html>
+        </html>

@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
+
 @Entity(name = "Phone")
 @Table(name = "phone")
 public class PhoneEntity implements Serializable {

@@ -4,18 +4,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core">
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
-<body>
 
-<div class="w3-container">
-    <h2>Dropdown Paragraph</h2>
-
-
-    <p class="w3-dropdown-hover">Hover over me!
-        <span class="w3-dropdown-content w3-green w3-padding">Hello World!</span>
-    </p>
-</div>
-
-</body>
 
 <ui:composition template="/templates/main.xhtml">
     <ui:define name="content">
@@ -31,34 +20,34 @@
             </p>
             <p>
                 <h:outputLabel value="PRODUCT:"/>
-                <h:inputText id="product" value="#{newBean.phone.version}"/>
+                <h:inputText id="product" value="#{newBean.phone.product}"/>
                 <h:messages for="product"/>
             </p>
             <p>
                 <h:outputLabel value="VERSION:"/>
-                <h:inputText id="version" value="#{newBean.phone.tipe}"/>
+                <h:inputText id="version" value="#{newBean.phone.version}"/>
                 <h:messages for="version"/>
             </p>
             <p>
                 <h:outputLabel value="IOS:"/>
-                <h:inputText id="ios" value="#{newBean.phone.tipe}"/>
+                <h:inputText id="ios" value="#{newBean.phone.ios}"/>
                 <h:messages for="ios"/>
             </p>
 
 
             <p>
                 <h:outputLabel value="cover:"/>
-                <h:inputText id="cover" value="#{newBean.phone.tipe}"/>
+                <h:inputText id="cover" value="#{newBean.phone.cover}"/>
                 <h:messages for="cover"/>
             </p>
             <p>
                 <h:outputLabel value="COUNTRY:"/>
-                <h:inputText id="country" value="#{newBean.phone.tipe}"/>
+                <h:inputText id="country" value="#{newBean.phone.country}"/>
                 <h:messages for="country"/>
             </p>
             <p>
                 <h:outputLabel value="SERIAL Nr:"/>
-                <h:inputText id="serialNr" value="#{newBean.phone.year}"/>
+                <h:inputText id="serialNr" value="#{newBean.phone.serialNr}"/>
                 <h:messages for="serialNr"/>
             </p>
 

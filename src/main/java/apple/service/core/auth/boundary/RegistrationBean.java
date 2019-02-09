@@ -29,22 +29,22 @@ public class RegistrationBean implements Serializable {
     private CurrentUser currentUser;
     @Inject
     private UserDAO userDAO;
-    @NotBlank(message = "Заполни поле Логина. (Please)")
+    @NotBlank(message = "Внимание! Хакер апознан! Я тебе не дам вести пустое поле!!! ")
     @Size(min = 4, message = "Логин минимум - 4 - символа.")
-    @Size(max = 100, message = "Не надо так усердствовать. Логин максиму - 100 - символов")
+    @Size(max = 20, message = "Вы! Что удумали?! Этоже LOCAL! Не надо так усердствовать. Логин максиму - 20 - символов. ")
     private String loginName;
     @NotBlank(message = "Я не увидела Пароля. (Please) Попытайся ещё разок!")
     @Size(min = 6, message = "Паролик очень кароткий! Сделай минимум - 6 - символов!")
     @Size(max = 20, message = "Не издевайся над собой! c{_]. Максимум - 20 - символов")
     private String password1;
     @NotBlank(message = "(Повтор) Я не прочитала Пароля. ")
-    @Size(min = 6, message = "(Повтор)  Сделай минимум - 6 - символов!")
-    @Size(max = 20, message = "(Повтор) Не издевайся над собой! c{_]. Максимум - 20 - символов")
+    @Size(min = 6, message = "(Повтор)  Лучше проверь, пока я не разозлилась!")
+    @Size(max = 20, message = "(Повтор) Не издевайся надо мной!!! c{_]. Максимум - 20 - символов")
     private String password2;
 
     public String register() {
         if (!Objects.equals(password1, password2)) {
-            FacesMessage msg = new FacesMessage(" Пароли не совподают. Повтор- это повторить. 'ctrl+c -> ctrl+v'.");
+            FacesMessage msg = new FacesMessage(" Пароли не совподают. Повтор- это повторить. 'ctrl+c -> ctrl+v'. Психовать буду ******: АГА!.");
             FacesContext.getCurrentInstance().addMessage(null, msg);
             return null;
         }
@@ -56,11 +56,11 @@ public class RegistrationBean implements Serializable {
             user.setRoleName(Role.USER);
             userDAO.createUser(user);
             LOGGER.debug("User {} registered. Hashed password: {}", loginName, hashedPassword);
-            return "ERROR- 2xx. Удачно!";
+            return "ERROR- 2xx. Удачно! Без сарказма!";
         } catch (Exception e) {
-            FacesMessage msg = new FacesMessage("ERROR-406. Попробуй другой Логин! А?");
+            FacesMessage msg = new FacesMessage("ERROR-406. Попробуй другой Логин! А? Просто эта персона (пальцами не показоваю) уже скамуниздела!");
             FacesContext.getCurrentInstance().addMessage(null, msg);
-            LOGGER.warn("ERROR- 409. Что-то не так? ", e);
+            LOGGER.warn("ERROR- 409. Что-то не так? Решай сам(а) свои проблемы!", e);
             return null;
         }
     }

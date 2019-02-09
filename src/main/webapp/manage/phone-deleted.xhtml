@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<body>
+<ui:composition template="/templates/main.xhtml">
+    <ui:define name="content">
+        <h:form>
+
+            <h:dataTable  value="#{ListBean.phone}" var="phone"
+                         rendered="#{not empty ListBean.phone}"
+                         styleClass="w3-table w3-table-all">
+
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                    #{phone.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Owner</f:facet>
+                    #{phone.owner}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">product</f:facet>
+                    #{phone.product}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">version</f:facet>
+                    #{phone.version}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">serialNR</f:facet>
+                    #{phone.serialNr}
+                </h:column>
+
+                <!--mnogo cego dobavit-->
+                <!--nemnogo drugogo udalit-->
+
+
+
+                <h:column>
+                    <f:facet name="header">.Delete.</f:facet>
+
+                    <h:commandButton value="DELETE" action="#{ListBean.deletecars}">
+                        <f:setPropertyActionListener value="#{phone.id}" target="#{ListBean.id}"/>
+                        <f:ajax render="@form" execute="@form"/>
+                    </h:commandButton>
+
+                </h:column>
+            </h:dataTable>
+
+        </h:form>
+    </ui:define>
+</ui:composition>
+</body>
+</html>

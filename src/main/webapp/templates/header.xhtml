@@ -6,15 +6,16 @@
     <h:form>
         <div class="w3-bar w3-black">
             <ui:fragment rendered="#{request.isUserInRole('USER')}">
-                <h:link value="User space" outcome="/app/index.xhtml" styleClass="w3-bar-item w3-button"/>
+                <h:link value="User's space" outcome="/app/index.xhtml" styleClass="w3-bar-item w3-button"/>
                 <h:link value="My Phones" outcome="/app/my-phone.xhtml" styleClass="w3-bar-item w3-button"/>
             </ui:fragment>
             <ui:fragment rendered="#{request.isUserInRole('MANAGER')}">
-                <h:link value="Manager space" outcome="/manage/index.xhtml" styleClass="w3-bar-item w3-button"/>
+                <h:link value="Manager's space" outcome="/manage/index.xhtml" styleClass="w3-bar-item w3-button"/>
+                <h:link value="Delete Phone" outcome="/manage/phone-deleted.xhtml" styleClass="w3-bar-item w3-button"/>
                 <h:link value="Create Phone" outcome="/manage/new-phone.xhtml" styleClass="w3-bar-item w3-button"/>
             </ui:fragment>
             <ui:fragment rendered="#{request.isUserInRole('ADMIN')}">
-                <h:link value="Admin space" outcome="/admin/index.xhtml" styleClass="w3-bar-item w3-button"/>
+                <h:link value="Admin's space" outcome="/admin/index.xhtml" styleClass="w3-bar-item w3-button"/>
                 <h:link value="Registered Users" outcome="/admin/user-list.xhtml" styleClass="w3-bar-item w3-button"/>
             </ui:fragment>
             <ui:fragment rendered="#{empty currentUser.user}">

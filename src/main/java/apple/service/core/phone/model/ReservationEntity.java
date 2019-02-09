@@ -59,4 +59,14 @@ public class ReservationEntity implements Serializable {
         this.created = created;
     }
 
+    @Override
+    public String toString() {
+        return "ReservationEntity{" +
+                "id=" + id +
+                ", phone=" + phone +
+                ", user=" + user +
+                ", status=" + status +
+                ", created=" + created +
+                '}';
+    }
 }

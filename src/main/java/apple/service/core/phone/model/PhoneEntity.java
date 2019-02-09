@@ -1,6 +1,7 @@
 package apple.service.core.phone.model;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -20,13 +21,13 @@ public class PhoneEntity implements Serializable {
     private String owner;
 
     @NotEmpty
-    @Size(min=10, max = 50)
-    @Column(name="product", length = 50, nullable = false)
+    @Size(min=5, max = 30)
+    @Column(name="product", length = 30, nullable = false)
     private String product;
 
     @NotEmpty
-    @Size(max = 200)
-    @Column(name="version", length = 200, nullable = false)
+    @Size(max = 30)
+    @Column(name="version", length = 30, nullable = false)
     private String version;
 
     @NotEmpty
@@ -40,7 +41,7 @@ public class PhoneEntity implements Serializable {
     private String color;
 
     @NotEmpty
-    @Size(min=5, max=18)
+    @Size(min=3, max=18)
     @Column(name="cover", length = 18, nullable = false)
     private String cover;
 
@@ -51,7 +52,8 @@ public class PhoneEntity implements Serializable {
 
 
     @NotEmpty
-    @Size(min=8, max=30)
+    //min-8!
+    @Size(min=4, max=30)
     @Column(name="serialNr", length = 30, nullable = false)
     private String serialNr;
 

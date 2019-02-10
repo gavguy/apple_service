@@ -39,7 +39,7 @@
                 <h:column>
                     <f:facet name="header">.Delete.</f:facet>
 
-                    <h:commandButton value="DELETE" action="#{ListBean.deletephone}">
+                    <h:commandButton value="DELETE" action="#{ListBean.phone}">
                         <f:setPropertyActionListener value="#{phone.id}" target="#{ListBean.id}"/>
                         <f:ajax render="@form" execute="@form"/>
                     </h:commandButton>

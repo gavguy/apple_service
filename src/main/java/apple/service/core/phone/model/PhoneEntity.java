@@ -1,7 +1,7 @@
 package apple.service.core.phone.model;
 
 import javax.persistence.*;
-import javax.transaction.Transactional;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 
 @Entity(name = "Phone")
-@Table(name = "phone")
+@Table(name = "phones")
 public class PhoneEntity implements Serializable {
     @Id
     @GeneratedValue
@@ -42,8 +42,8 @@ public class PhoneEntity implements Serializable {
     private String color;
 
     @NotEmpty
-    @Size(min = 3, max = 18)
-    @Column(name = "cover", length = 18, nullable = false)
+    @Size(min = 3, max = 30)
+    @Column(name = "cover", length = 30, nullable = false)
     private String cover;
 
 

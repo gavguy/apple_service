@@ -22,8 +22,8 @@ public class PhoneEntity implements Serializable {
     private String owner;
 
     @NotEmpty
-    @Size(min = 5, max = 30)
-    @Column(name = "product", length = 30, nullable = false)
+    @Size(min = 1, max = 50)
+    @Column(name = "product", length = 50, nullable = false)
     private String product;
 
     @NotEmpty

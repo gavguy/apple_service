@@ -6,5 +6,3 @@ insert into phones (id, owner, product, version, ios, color, cover, country, ser
 insert into phones (id, owner, product, version, ios, color, cover, country, serialNr, year, information) values (-2, 'artem artem', 'nokia', '5s', 'ios-12', 'white', 'classic/special Edition', 'chine', '98765456,' 1996, 'ti uze')
 insert into phones (id, owner, product, version, ios, color, cover, country, serialNr, year, information) values (-3, 'igorj igorj', 'ipod', '5s', 'ios-12', 'white', 'classic/special Edition', 'chine', '12345678', 1996,'nakonech')
 insert into phones (id, owner, product, version, ios, color, cover, country, serialNr, year, information) values (-4, 'ivan ivan', 'wirelees moyse', '5s', 'ios-12', 'white', 'classic/special Edition', 'chine', '98764300', 1996,'v konce to koncov')
-
-

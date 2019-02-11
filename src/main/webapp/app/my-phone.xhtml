@@ -67,65 +67,65 @@
         </h:dataTable>
 
 
-    <h4>Taken list</h4>
-    <h:dataTable value="#{myBean.takenPhones}"
-                 var="res"
-                 styleClass="w3-table w3-table-all">
+        <h4>Taken list</h4>
+        <h:dataTable value="#{myBean.takenPhones}"
+                     var="res"
+                     styleClass="w3-table w3-table-all">
 
-        <h:column>
-            <f:facet name="header">Id</f:facet>
-            #{res.id}
-        </h:column>
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                #{res.id}
+            </h:column>
 
-        <h:column>
-            <f:facet name="header">Status</f:facet>
-            #{res.status}
-        </h:column>
+            <h:column>
+                <f:facet name="header">Status</f:facet>
+                #{res.status}
+            </h:column>
 
-        <h:column>
-            <f:facet name="header">Owner</f:facet>
-            #{res.phone.owner}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Product</f:facet>
-            #{res.phone.product}
-        </h:column>
-        <h:column>
-            <f:facet name="header">User Name</f:facet>
-            #{res.user.loginName}
-        </h:column>
-    </h:dataTable>
+            <h:column>
+                <f:facet name="header">Owner</f:facet>
+                #{res.phone.owner}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Product</f:facet>
+                #{res.phone.product}
+            </h:column>
+            <h:column>
+                <f:facet name="header">User Name</f:facet>
+                #{res.user.loginName}
+            </h:column>
+        </h:dataTable>
 
-    <h5>hone history</h5>
-    <h:dataTable value="#{myBean.historyPhones}"
-                 var="phone"
-                 styleClass="w3-table w3-table-all">
+        <h5>hone history</h5>
+        <h:dataTable value="#{myBean.historyPhones}"
+                     var="phone"
+                     styleClass="w3-table w3-table-all">
 
-        <h:column>
-            <f:facet name="header">Id</f:facet>
-            #{res.id}
-        </h:column>
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                #{res.id}
+            </h:column>
 
-        <h:column>
-            <f:facet name="header">Status</f:facet>
-            #{res.status}
-        </h:column>
+            <h:column>
+                <f:facet name="header">Status</f:facet>
+                #{res.status}
+            </h:column>
 
-        <h:column>
-            <f:facet name="header">Owner</f:facet>
-            #{res.phone.owner}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Product</f:facet>
-            #{res.phone.product}
-        </h:column>
-        <h:column>
-            <f:facet name="header">User Name</f:facet>
-            #{res.user.loginName}
-        </h:column>
-    </h:dataTable>
+            <h:column>
+                <f:facet name="header">Owner</f:facet>
+                #{res.phone.owner}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Product</f:facet>
+                #{res.phone.product}
+            </h:column>
+            <h:column>
+                <f:facet name="header">User Name</f:facet>
+                #{res.user.loginName}
+            </h:column>
+        </h:dataTable>
 
-</ui:define>
+    </ui:define>
 </ui:composition>
 
-        </html>
+</html>

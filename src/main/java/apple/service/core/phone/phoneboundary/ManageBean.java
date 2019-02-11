@@ -1,4 +1,4 @@
-package apple.service.core.phone.Phone_Bean;
+package apple.service.core.phone.phoneboundary;
 
 import apple.service.core.phone.model.ReservationEntity;
 import apple.service.core.phone.model.StatusReservation;
@@ -35,8 +35,8 @@ public class ManageBean implements Serializable {
             Long reservationId = r.getId();
             Optional<ReservationEntity> firstReservation = em.createQuery(
                     "select r from Reservation r "
-                            +   "where r.phone = :phone and r.status <> 'CLOSED' "
-                            +  "order by r.created", ReservationEntity.class)
+                            + "where r.phone = :phone and r.status <> 'CLOSED' "
+                            + "order by r.created", ReservationEntity.class)
                     .setParameter("phone", r.getPhone())
                     .getResultStream()
                     .findFirst();

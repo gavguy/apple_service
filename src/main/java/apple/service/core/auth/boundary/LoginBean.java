@@ -41,7 +41,6 @@ public class LoginBean implements Serializable {
     private String password;
 
 
-
     public String login() throws IOException {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         Credential credential = new UsernamePasswordCredential(loginName, password);
@@ -87,12 +86,15 @@ public class LoginBean implements Serializable {
     public String getLoginName() {
         return loginName;
     }
+
     public void setLoginName(String loginName) {
         this.loginName = loginName;
     }
+
     public String getPassword() {
         return password;
     }
+
     public void setPassword(String password) {
         this.password = password;
     }

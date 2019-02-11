@@ -1,4 +1,4 @@
-package apple.service.core.phone.Phone_Bean;
+package apple.service.core.phone.phoneboundary;
 
 import apple.service.core.phone.model.PhoneEntity;
 
@@ -16,9 +16,10 @@ public class ListBean implements Serializable {
     @PersistenceContext
     private EntityManager em;
     private String term;
-    private boolean delete=false;
+    private boolean delete = false;
     //vedj tak nado
-private Long id;
+    private Long id;
+
     public List<PhoneEntity> getPhones() {
         if (term == null) {
             return em.createQuery("select p from Phone p", PhoneEntity.class)
@@ -33,14 +34,14 @@ private Long id;
         }
     }
 
-   @Transactional
-    public String phonedelete () {
-       PhoneEntity phone;
-       phone = em.find(PhoneEntity.class, id);
-       em.remove(phone);
-       delete = true;
-       return null;
-   }
+    @Transactional
+    public String phonedelete() {
+        PhoneEntity phone;
+        phone = em.find(PhoneEntity.class, id);
+        em.remove(phone);
+        delete = true;
+        return null;
+    }
 
     public EntityManager getEm() {
         return em;

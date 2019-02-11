@@ -1,4 +1,4 @@
-package apple.service.core.phone.Phone_Bean;
+package apple.service.core.phone.phoneboundary;
 
 import apple.service.core.phone.model.PhoneEntity;
 
@@ -40,7 +40,5 @@ public class NewBean implements Serializable {
         this.phone = phone;
     }
 
-  
 
-   
 }

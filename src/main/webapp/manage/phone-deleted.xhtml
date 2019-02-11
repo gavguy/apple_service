@@ -9,7 +9,7 @@
     <ui:define name="content">
         <h:form>
 
-            <h:dataTable  value="#{ListBean.phone}" var="phone"
+            <h:dataTable value="#{ListBean.phone}" var="phone"
                          rendered="#{not empty ListBean.phone}"
                          styleClass="w3-table w3-table-all">
 
@@ -35,12 +35,11 @@
                 </h:column>
 
 
-
                 <h:column>
                     <f:facet name="header">.Delete.</f:facet>
 
                     <h:commandButton value="DELETE" action="#{ListBean.phonedelete}">
-                         value="#{phone.id}"
+                        value="#{phone.id}"
                         <f:ajax render="@form" execute="@form"/>
                     </h:commandButton>
 

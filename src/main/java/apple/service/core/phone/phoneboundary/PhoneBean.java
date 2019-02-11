@@ -1,4 +1,4 @@
-package apple.service.core.phone.Phone_Bean;
+package apple.service.core.phone.phoneboundary;
 
 import apple.service.core.auth.boundary.CurrentUser;
 import apple.service.core.phone.model.PhoneEntity;
@@ -24,12 +24,10 @@ public class PhoneBean implements Serializable {
     private PhoneEntity phone;
 
 
-
     public void openPhone() {
         System.out.println("Opening phone " + id);
         phone = em.find(PhoneEntity.class, id);
     }
-
 
 
     @Transactional

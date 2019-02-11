@@ -13,7 +13,6 @@ import javax.security.enterprise.identitystore.CredentialValidationResult;
 import javax.security.enterprise.identitystore.IdentityStore;
 
 
-
 import static apple.service.core.auth.model.Role.*;
 
 @ApplicationScoped
@@ -52,7 +51,6 @@ public class JpaIdentityStore implements IdentityStore {
     }
 
     //
-
 
 
     private boolean checkPassword(String hashedPassword,
